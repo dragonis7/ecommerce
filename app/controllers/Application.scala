@@ -102,7 +102,7 @@ class Application @Inject() (productDAO: ProductDAO)(catDAO: CategoryDAO)(
   def applyproductchanges = silhouette.SecuredAction { implicit request =>
     val updatedProduct: models.Product = productForm.bindFromRequest().get
     productDAO.update(updatedProduct)
-    Redirect(routes.Application.filterCategory(updatedProduct.kat))
+    Redirect(routes.Application.filterProducts())
   }
 
   def updateproduct(id: Int) = silhouette.SecuredAction.async { implicit request =>
