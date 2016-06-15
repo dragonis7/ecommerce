@@ -9,13 +9,15 @@
 
         <div class="col-md-9">
 
+
+
           <div class="col-md-1"> </div>
 
           <form role="form" action="@routes.Application.applyproductchanges?csrfToken=@csrf" method="post" >
             <div class="col-md-8">
                 <input type="hidden" class="form-control" name="id" value="@product.ID">
               <div class="form-group">
-                <label for="InputName">Nazwa Produktu</label>
+                <label for="InputName">Nazwa</label>
                 <div class="input-group">
                   <input type="text" class="form-control"  name="name" id="InputName" placeholder="Enter Name" value="@product.name"  required>
                 </div>
@@ -40,14 +42,11 @@
                 <div class="input-group">
                   <select  class="form-control" name="kat" id="InputName"  required>
 
-                  <option value="@product.kat"> Computers</option>
-                    <option value="Sport"> Sport</option>
-                    <option value="Smartphone"> Smartphone</option>
-                    <option value="Foto">Foto</option>
-                    <option value="Network">Network</option>
-                    <option value="AGD">AGD</option>
-                    <option value="RTV">RTV</option>
-                    <option value="Journey">Journey</option>
+                  <option value="@product.kat"> Komputery</option>
+                    <option value="Telefony"> Telefony</option>
+                    <option value="Telewizory">Telewizory</option>
+                    <option value="Tablety">Tablety</option>
+                    <option value="Nawigacje">Nawigacje</option>
                       </select>
                 </div>
               </div>
