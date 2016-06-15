@@ -23,26 +23,18 @@ $(document).ready(function () {
         console.log(JSON.stringify(basket[i]));
         sum = sum + parseInt(basket[i].price, 10);
         list.before(' <tr id="row' + i + '">'+
-            '<td class="col-sm-10 col-md-6">'+
-            '<div class="media">'+
-            '<a class="thumbnail pull-left" href="#"> <img class="media-object" src="/assets/images/avatar.jpg"  > </a>'+
-            '<div class="media-body text-center" style="vertical-align:bottom;">'+
-                '<div id="id" hidden>+basket[i].id+</div>'+
-            '<h4 class="media-heading"><a href="#">'+basket[i].product+'</a></h4>'+ // product name
-
-            '</div>'+
-            ' </div></td>'+
-            '<td class="col-sm-1 col-md-1 text-center"><strong>'+ basket[i].price +'</strong></td>'+
-            '<td class="col-sm-1 col-md-1 text-center"><strong>'+ basket[i].kat +'</strong></td>'+
-        '<td class="col-sm-1 col-md-1">'+
-        '<button type="button" class="btn btn-danger" id="remove_button'+i+'">'+
-        '<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>'+
+            '<td>'+
+            '<div id="id" hidden>+basket[i].id+</div>'+
+            '<h4><a href="#">'+basket[i].product+'</a></h4>'+ // product name
+            ''+
+            '</td>'+
+            '<td class="text-center">'+ basket[i].price +'</td>'+
+            '<td class="text-center">'+ basket[i].kat +'</td>'+
+        '<td >'+
+        '<button type="button" class="btn btn-default" id="remove_button'+i+'">'+
+        '<span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>'+
         ' </button></td>'+
         ' </tr>');
-
-
-
-
 
     }
 
