@@ -6,31 +6,31 @@
         <div class="col-md-8">
 
             <div class="form-group">
-                <label for="InputName">Name </label>
+                <label for="InputName">Imie </label>
                 <div class="input-group">
-                    <input type="text" class="form-control" name="InputName" id="InputName" placeholder="Enter Name" pattern="[a-zA-Z]+" required>
+                    <input type="text" class="form-control" name="InputName" id="InputName" placeholder="Wpisz tu swoje imie" pattern="[a-zA-Z]+" required>
 
                 </div>
 
-                <label for="InputName">Surname</label>
+                <label for="InputName">Nazwisko</label>
                 <div class="input-group">
-                    <input type="text" class="form-control" name="InputName" id="InputSurname" placeholder="Enter Surname" pattern="[a-zA-Z]+" required>
+                    <input type="text" class="form-control" name="InputName" id="InputSurname" placeholder="Wpisz nazwisko" pattern="[a-zA-Z]+" required>
 
                 </div>
                 </div>
 
             <div class="form-group">
-                <label for="InputCity">City</label>
+                <label for="InputCity">Miasto</label>
                 <div class="input-group">
-                    <input type="text" class="form-control" id="InputCity" name="InputCity" placeholder="Enter City" pattern="[a-zA-Z]+" required  >
+                    <input type="text" class="form-control" id="InputCity" name="InputCity" placeholder="Miasto wysylki" pattern="[a-zA-Z]+" required  >
 
             </div>
                 </div>
 
                 <div class="form-group">
-            <label for="InputEmail">Address</label>
+            <label for="InputEmail">Adres</label>
             <div class="input-group">
-                <input type="address" class="form-control" id="InputEmail" name="InputAdress" placeholder="Enter Street Address" pattern="[a-zA-Z0-9\s]+" required  >
+                <input type="address" class="form-control" id="InputEmail" name="InputAdress" placeholder="Ulica do wysylki" pattern="[a-zA-Z0-9\s]+" required  >
 
             </div>
         </div>
@@ -42,7 +42,7 @@
 
 
             <div class="form-group">
-                <label for="InputMessage">Message </label>
+                <label for="InputMessage">Wiadomosc dla sklepu </label>
                 <div class="input-group">
                     <textarea name="InputMessage" id="InputMessage" class="form-control" rows="5" ></textarea>
 
@@ -52,11 +52,11 @@
 
 
             <div class="form-group">
-                <label for="delivery">Delivery</label>
+                <label for="delivery">Sposob zaplaty</label>
                 <div class="input-group">
                     <select class="form-control" name="delivery" id="delivery" required>
-                        <option value="cash on delivery">cash on delivery</option>
-                        <option value="Credit Card">Credit Card</option>
+                        <option value="cash on delivery">Gotowka</option>
+                        <option value="Credit Card">Karta kredytowa</option>
 
 
                     </select>
@@ -67,6 +67,8 @@
 
 
 
+            <a href="/order" id="clean-basket" class="btn btn-success" role="button">Akceptuj</a>
+            <hr class="featurette-divider hidden-lg">
 
 
 
@@ -76,10 +78,8 @@
 
 
 
-
     </form>
 
-<br>
-    <a href="/order" id="clean-basket" class="btn btn-info" role="button">Confirm</a>
-    <hr class="featurette-divider hidden-lg">
+
+
 }
