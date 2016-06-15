@@ -24,9 +24,9 @@ email = Email
 password = Password
 sign.up = Zarejestruj
 sign.in = Zaloguj
-sign.out = Sign out
-sign.in.now = Sign in now
-sign.up.now = Sign up now
+sign.out = Wyloguj
+sign.in.now = Zaloguj sie teraz
+sign.up.now = Wyloguj sie teraz
 already.a.member = Already a member?
 not.a.member = Not a member?
 

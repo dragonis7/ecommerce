@@ -4,9 +4,25 @@
     <div class="alert alert-success" id="passwordsNoMatchRegister"  >
       <strong> Dodano do koszyka wybrany produkt! </strong>
     </div>
+
+
+
+  @user.map { u =>
   <div class="row">
-    <h4 class="text-primary">Lista wszystkich dostępnych produktów: </h4>
+    <div class="col-sm-8">
+      <h4 class="text-primary">Lista wszystkich dostępnych produktów: </h4>
+    </div>
+    <div class="col-sm-4">
+      <a href="/createproduct" class="btn pull-right btn-primary " role="button"><i class="glyphicon glyphicon-plus-sign"> </i> Dodaj nowy produkt</a>
+    </div>
   </div>
+}.getOrElse {
+    <div class="row">
+      <h4 class="text-primary">Lista wszystkich dostępnych produktów: </h4>
+
+    </div>
+  }
+
     <div class="row">
 
         <div class="table-responsive">
@@ -31,7 +47,7 @@
                 </td>
                 }.getOrElse {
                   <td>
-                    <button class="btn   button-add-to-cart glyphicon glyphicon-plus-sign" data-id="@p.ID"><span class=""></span></button>
+                    <button class="btn btn-default  button-add-to-cart glyphicon glyphicon-plus-sign" data-id="@p.ID"><span class=""></span></button>
                     <a href="@routes.SignInController.view" class="btn" role="button"><i class="glyphicon glyphicon glyphicon-log-in"></i></a>
                   </td>
                 }
@@ -50,13 +66,6 @@
         </div>
 
 
-        @user.map { u =>
-        <td>
-          <a href="/createproduct" class="btn btn-danger" role="button"><i class="glyphicon glyphicon-plus-sign"> </i>  Add new product</a>
-        </td>
-        }.getOrElse {
-
-        }
 
 
 
