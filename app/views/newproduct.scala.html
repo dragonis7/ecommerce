@@ -1,0 +1,31 @@
+@(product: Product)(implicit messages: Messages, webJarAssets: WebJarAssets)
+
+
+@temp(){
+            <div class="col-md-2"></div>
+          <div class="col-md-6">
+             <i class="glyphicon glyphicon-ok"></i>A new product added: <br>
+
+            <div class="table-responsive">
+              <table class="table table-hover table-condensed" >
+                <tbody>
+                  <tr>
+                    <td>
+                      <img src="http://placehold.it/100x100" alt="..." class="img-responsive"/>
+
+                    </td>
+                    <td>@product.name</td>
+                    <td>@product.description</td>
+                    <td>@product.price</td>
+                    <td>@product.kat</td>
+                  </tr>
+
+                </tbody>
+              </table>
+              <br>
+
+          <a href="/showProducts" class="btn btn-danger" role="button"> BACK</a>
+          </div>
+          <div class="col-md-1"></div>
+        </div>
+}

@@ -1,0 +1,9 @@
+.table>tbody>tr>td, .table>tfoot>tr>td{
+    vertical-align: middle;
+}
+
+
+
+.glyphicon.glyphicon-ok  {
+    font-size: 80px;
+}

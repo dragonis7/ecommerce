@@ -1,0 +1,186 @@
+@(csrf: String, product: Product, user: models.User)(implicit messages: Messages, webJarAssets: WebJarAssets)
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Shop Homepage </title>
+
+      <!-- Bootstrap Core CSS -->
+    <link href="@routes.Assets.at("bootstrap/css/bootstrap.min.css")" rel="stylesheet">
+      <!-- Custom CSS -->
+    <link href="@routes.Assets.at("bootstrap/css/shop-homepage.css")" rel="stylesheet">
+
+    <link href="@routes.Assets.at("stylesheets/main.css")" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+      <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+          <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"></a>
+        </div>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+
+            <li>
+              <a href="/contact">Contact</a>
+            </li>
+
+
+            <li>
+              <a href="#">About us </a>
+            </li>
+
+
+            <li>
+              <a href="#">My Account </a>
+            </li>
+
+            <li>
+              <a href="#">Delivery </a>
+            </li>
+
+
+            <li>
+              <a href="#">Shopping Card  </a>
+            </li>
+
+
+          </ul>
+
+
+
+        </div>
+          <!-- /.navbar-collapse -->
+      </div>
+        <!-- /.container -->
+    </nav>
+
+      <!-- Page Content -->
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col-md-3">
+          <p class="lead">E-SHOPPING</p>
+          <div class="list-group">
+            <a href="/filter?name=Computers" class="list-group-item"> <i class="glyphicon glyphicon-hdd"></i> Computers</a>
+            <a href="/filter?name=Sport" class="list-group-item"> <i class="glyphicon glyphicon-user"></i> Sport</a>
+            <a href="/filter?name=Smartphone"class="list-group-item"> <i class="glyphicon glyphicon-erase"></i> Smartphone</a>
+            <a href="/filter?name=Foto" class="list-group-item"> <i class="glyphicon glyphicon-camera"></i> Foto</a>
+            <a href="/filter?name=Network" class="list-group-item"> <i class="glyphicon glyphicon-signal"></i> Network</a>
+            <a href="/filter?name=AGD" class="list-group-item"> <i class="glyphicon glyphicon-tasks"></i> AGD</a>
+            <a href="/filter?name=RTV" class="list-group-item"> <i class="glyphicon glyphicon-erase"></i> RTV</a>
+            <a href="/filter?name=Journey" class="list-group-item"> <i class="glyphicon glyphicon-briefcase"></i> Journey</a>
+
+
+          </div>
+        </div>
+
+        <div class="col-md-9">
+
+
+
+
+          <div class="col-md-1"> </div>
+
+          <form role="form" action="@routes.Application.applyproductchanges?csrfToken=@csrf" method="post" >
+            <div class="col-md-8">
+                <input type="hidden" class="form-control" name="id" value="@product.ID">
+              <div class="form-group">
+                <label for="InputName">Name</label>
+                <div class="input-group">
+                  <input type="text" class="form-control"  name="name" id="InputName" placeholder="Enter Name" value="@product.name"  required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="InputMessage">Description</label>
+                <div class="input-group"
+                >
+                  <textarea name="description" id="InputMessage" class="form-control" rows="5"required >@product.description</textarea>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="InputName">Price</label>
+                <div class="input-group">
+                  <input type="text" class="form-control" name="price" id="InputName" value="@product.price" placeholder="Enter Price" pattern="\d*"  required>
+                  </div>
+              </div>
+
+              <div class="form-group">
+                <label for="InputName">Category</label>
+                <div class="input-group">
+                  <select  class="form-control" name="kat" id="InputName"  required>
+
+                  <option value="@product.kat"> Computers</option>
+                    <option value="Sport"> Sport</option>
+                    <option value="Smartphone"> Smartphone</option>
+                    <option value="Foto">Foto</option>
+                    <option value="Network">Network</option>
+                    <option value="AGD">AGD</option>
+                    <option value="RTV">RTV</option>
+                    <option value="Journey">Journey</option>
+                      </select>
+                </div>
+              </div>
+              <input type="submit" name="submit" id="submit" value="Update" class="btn btn-danger">
+            </div>
+          </form>
+          <hr class="featurette-divider hidden-lg">
+
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+      <!-- /.container -->
+
+    <div class="container">
+
+      <hr>
+
+        <!-- Footer -->
+      <footer>
+        <div class="row">
+          <div class="col-lg-12">
+            <p>E-Biznes Project Shopping Website</p>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+      <!-- /.container -->
+
+      <!-- jQuery -->
+    <script src="@routes.Assets.at("bootstrap/js/jquery.js")" type="text/javascript" defer="defer" ></script>
+      <!-- Bootstrap Core JavaScript -->
+    <script src="@routes.Assets.at("bootstrap/js/bootstrap.min.js")" type="text/javascript" defer="defer" ></script>
+
+  </body>
+
+</html>
+

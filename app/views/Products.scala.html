@@ -1,0 +1,58 @@
+@(products: Seq[Product], user: Option[models.User])(implicit messages: Messages, webJarAssets: WebJarAssets)
+
+
+
+@temp(user) {
+
+  <div class="row">
+
+    <div class="col-md-12 ">
+
+
+
+
+      <div class="table-responsive">
+        <table class="table table-hover table-condensed" >
+          <thead>
+            <tr>
+              <th>ID's</th>
+              <th></th>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Price</th>
+              <th>Category</th>
+              <th>Option</th>
+
+            </tr>
+          </thead>
+          <tbody>
+          @for(p <- products){
+            <tr>
+              <td>@p.ID</td>
+              <td>
+                <img src="@routes.Assets.at("images/avatar.jpg")" alt="..." class="img-responsive"/>
+
+              </td>
+              <td>@p.name</td>
+              <td>@p.description</td>
+              <td>@p.price</td>
+              <td>@p.kat</td>
+              <td><a href="/updateproduct/@p.ID" class="btn btn-info " role="button"><i class="glyphicon glyphicon-refresh"></i></a>
+                <a href="/deleteproduct/@p.ID" class="btn btn-danger " role="button"><i class="glyphicon glyphicon-trash"></i></a>  </td>
+
+            </tr>
+          }
+          </tbody>
+        </table>
+      </div>
+      <a href="/createproduct" class="btn btn-danger" role="button"><i class="glyphicon glyphicon-plus-sign"> </i>  Add new product</a>
+
+
+
+
+    </div>
+
+
+  </div>
+}
+

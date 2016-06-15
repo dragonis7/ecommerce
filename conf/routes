@@ -1,0 +1,64 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET  /              controllers.Application.template
+
+#GET /my_basket      controllers.ShoppingBasket.Shoppping_welcome
+#GET /payment        controllers.Payment.payment_welcome
+#GET /delivery       controllers.Delivery.delivery_welcome
+#GET /confirm        controllers.confirmOrder.confirm_message
+#GET /checkout       controllers.Checkout.checkout_message
+#GET /my_account     controllers.AccountInfo.account_message
+
+
+
+GET     /contact         controllers.Application.contact
+GET     /cart        controllers.Application.cart
+GET     /shopping        controllers.Application.shopping
+
+GET     /filter                 controllers.Application.filterCategory(name:String)
+GET     /showProducts              controllers.Application.filterProducts
+GET     /createproduct              controllers.Application.createproduct
+POST    /newproduct                 controllers.Application.newproduct
+GET     /updateproduct/:id        controllers.Application.updateproduct(id: Int)
+POST    /applyproductchanges        controllers.Application.applyproductchanges
+GET     /deleteproduct/:id        controllers.Application.deleteproduct(id:Int)
+
+
+
+
+
+
+
+GET     /shoppingCard        controllers.Application.shoppingCard
+# Map static resources from the /public folder to the /assets URL path
+
+
+GET     /assets/*file                   controllers.Assets.at(path="/public", file)
+GET     /webjars/*file                  controllers.WebJarAssets.at(file)
+
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET         /auth                            controllers.ApplicationController.index
+GET         /signOut                         controllers.ApplicationController.signOut
+GET         /authenticate/:provider          controllers.SocialAuthController.authenticate(provider)
+
+GET         /signUp                          controllers.SignUpController.view
+POST        /signUp                          controllers.SignUpController.submit
+
+GET   /order                          controllers.Application.order
+GET        /pay                         controllers.Application.payment
+GET        /confirm                        controllers.Application.confirm
+
+
+GET         /signIn                          controllers.SignInController.view
+POST        /signIn                          controllers.SignInController.submit
+
+# Map static resources from the /public folder to the /assets URL path
+GET         /assets/*file                    controllers.Assets.at(path="/public", file)
+GET         /webjars/*file                   controllers.WebJarAssets.at(file)
