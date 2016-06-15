@@ -1,6 +1,4 @@
-/**
- * Created by beduin90 on 25.04.2016.
- */
+
 package DAO
 
 import scala.concurrent.Future

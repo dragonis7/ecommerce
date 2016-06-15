@@ -1,6 +1,4 @@
-/**
- * Created by beduin90 on 18.04.2016.
- */
+
 package controllers
 
 import DAO.{ CategoryDAO, ProductDAO }
