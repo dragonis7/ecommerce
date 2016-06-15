@@ -29,7 +29,6 @@ class ApplicationSpec extends Specification with  ProductsListPage{
       contentAsString(home) must contain ("AGD")
       contentAsString(home) must contain ("Computers")
       contentAsString(home) must contain ("Foto")
-      contentAsString(home) must contain ("journey")
       contentAsString(home) must contain ("")
       contentAsString(home) must contain ("Category 5")
       contentAsString(home) must contain (" E-Biznes Online Store Project")
